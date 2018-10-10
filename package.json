@@ -1,0 +1,24 @@
+{
+  "name": "nudge",
+  "version": "1.0.0",
+  "description": "javascript to do list",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxwelltmorgan/nudge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maxwelltmorgan/nudge/issues"
+  },
+  "homepage": "https://github.com/maxwelltmorgan/nudge#readme",
+  "devDependencies": {
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2"
+  }
+}
