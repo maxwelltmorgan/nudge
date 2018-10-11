@@ -25,7 +25,7 @@ header {
     font-size: 3rem;
 }
 
-ul {
+.header-list {
     height: 100px;
     text-align: center;
     list-style: none;
@@ -33,7 +33,7 @@ ul {
     margin: 0;
 }
 
-li {
+.header-item {
     display: inline-block;
     line-height: 100px;
     vertical-align: middle;
@@ -85,12 +85,22 @@ aside {
   box-sizing: border-box;
 }
 
-.project-title {
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 1.2rem;
-  color: #4c5760;
+.projects-header {
   margin-top: 40px;
+  text-align: center;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.projects-list {
+  color: #4c5760;
+  list-style: none;
+}
+
+.project-item {
+  font-size: 1.2rem;
+  padding: 5px;
+  text-transform: capitalize;
 }
 
 main {
