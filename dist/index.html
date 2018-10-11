@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>Nudge</title>
+    <link rel="stylesheet" type="text/css" href="/src/style/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/src/style/index.css">
+    <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Semi+Expanded" rel="stylesheet">
 </head>
 <body>
 <div class="container">
-    <header>I'm a header
+    <header>
+        <ul>
+            <li><img id="logo" src="/src/hand_blue.svg" alt="logo"></li>
+            <li id="title">Nudge</li>
+        </ul>
     </header>
-    <aside>I'm an aside
+    <aside class="column left">
+        <div class="aside-container">
+            <h3 class="project-title">Projects</h3>
+        </div>
     </aside>
-    <main>I'm the main
+    <main class="column right">
+        <h2 class="current-project">ToDO</h2>
         <div id="content"></div>
     </main>
 <script src="bundle.js"></script>
