@@ -92,7 +92,7 @@ aside {
   text-transform: uppercase;
 }
 
-.projects-list {
+#projects-list {
   color: #4c5760;
   list-style: none;
 }
