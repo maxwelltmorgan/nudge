@@ -1,13 +1,10 @@
 // import your function
-import { myName } from './myName';
+import { toDoFactory, addToDo } from './createTodo';
 
-function component() {
-  var content = document.getElementById('content');
-  var element = document.createElement('div');
+const todosList = document.getElementById('todos-list');
 
-  // use your function!
-  element.innerHTML = myName('Max');
-  return element;
-}
-
-  content.appendChild(component());
+todosList.appendChild(addToDo('Shopping', 'Buy Stuff', 'Tomorrow', 'High'));
+todosList.appendChild(addToDo('Lift', 'Get Big', 'Tomorrow', 'High'));
+todosList.appendChild(addToDo('Eat', 'Maintain Energy', 'Tomorrow', 'High'));
+todosList.appendChild(addToDo('Read', 'Stay smart', 'Tomorrow', 'High'));
+todosList.appendChild(addToDo('Sleep', 'Recharge', 'Tomorrow', 'High'));
