@@ -1,2 +1,2 @@
 // import your function
-import { todos, projects } from './crud';
+import { renderTodos, renderProjects } from './render';

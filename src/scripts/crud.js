@@ -2,8 +2,7 @@ const projects = [];
 
 //define project
 const project = (name) => {
-    const getName = () => name;
-    return { getName };
+    return { name };
 };
 
 //create project
@@ -12,15 +11,21 @@ const createProject = (name) => {
     projects.push(newProject);
 };
 
+//delete project
+const deleteProject = (i) => {
+    projects.splice(i, 1);
+};
+
+//update project
+const updateProjectName = (i, newProjectName) => {
+    projects[i].name = newProjectName;
+};
+
 const todos = [];
 
 //define todo
 const todo = (title, description, dueDate, priority) => {
-    const getTitle = () => title;
-    const getDescription = () => description;
-    const getDueDate = () => dueDate;
-    const getPriority = () => priority;
-    return { getTitle, getDescription, getDueDate, getPriority };
+    return { title, description, dueDate, priority };
 };
 
 //createTodo
@@ -35,8 +40,8 @@ const deleteTodo = (i) => {
 };
 
 //updateTodo
-const updateTodo = () => {
-
+const updateTodo = (index, todoProp, todoVal) => {
+    todos[index][todoProp] = todoVal;
 };
 
 export { todos, projects }
