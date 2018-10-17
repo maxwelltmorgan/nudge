@@ -115,3 +115,13 @@ main {
   color: #011638;
   margin-top: 10px;
 }
+
+#todos-list {
+    list-style: none;
+}
+
+.todo-item {
+  font-size: 1rem;
+  padding: 5px;
+  text-transform: capitalize;
+}

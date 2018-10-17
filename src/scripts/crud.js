@@ -1,5 +1,11 @@
 const projects = [];
 
+let currentProject = 'default';
+
+const setCurrentProject = (i) => {
+    currentProject = projects[i].name;
+};
+
 //define project
 const project = (name) => {
     return { name };
@@ -44,4 +50,7 @@ const updateTodo = (index, todoProp, todoVal) => {
     todos[index][todoProp] = todoVal;
 };
 
-export { todos, projects }
+createProject('one');
+createTodo('onetodo','testing one','tomorrow','high');
+
+export { todos, project, projects, currentProject, setCurrentProject, createProject }
