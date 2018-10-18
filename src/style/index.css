@@ -95,6 +95,7 @@ aside {
 #projects-list {
   color: #4c5760;
   list-style: none;
+  margin-bottom: 10px;
 }
 
 .project-item {
@@ -103,13 +104,35 @@ aside {
   text-transform: capitalize;
 }
 
+#projectButton {
+  color: #D11C0A;
+  border: none;
+  background-color: transparent;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  margin-left: 40px;
+}
+
+#projectButton:hover {
+  color: #011638;
+}
+
+#projectButton:active {
+  color: #083D77;
+}
+
+#projectButton:focus {
+  outline: none;
+}
+
 main {
   height: 100vh;
   padding: 10px;
   box-sizing: border-box;
 }
 
-.current-project {
+#current-project {
   text-align: center;
   font-size: 2rem;
   color: #011638;
@@ -117,11 +140,33 @@ main {
 }
 
 #todos-list {
-    list-style: none;
+  list-style: none;
 }
 
 .todo-item {
   font-size: 1rem;
   padding: 5px;
   text-transform: capitalize;
+}
+
+#todoButton {
+  color: #D11C0A;
+  border: none;
+  background-color: transparent;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  margin-left: 40px;
+}
+
+#todoButton:hover {
+  color: #011638;
+}
+
+#todoButton:active {
+  color: #083D77;
+}
+
+#todoButton:focus {
+  outline: none;
 }

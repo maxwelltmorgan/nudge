@@ -34,4 +34,7 @@ todosItemc.innerHTML = todos[2].dueDate;
 todosItemc.classList.add("todo-item");
 todosList.appendChild(todosItemc);
 
+const renderCurrentProject = document.getElementById('current-project');
+renderCurrentProject.innerHTML = currentProject;
+
 export { renderTodos, renderProjects };

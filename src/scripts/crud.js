@@ -1,6 +1,6 @@
 const projects = [];
 
-let currentProject = 'default';
+let currentProject = 'All Todos';
 
 const setCurrentProject = (i) => {
     currentProject = projects[i].name;
