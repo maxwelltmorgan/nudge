@@ -149,6 +149,22 @@ main {
   text-transform: capitalize;
 }
 
+.material-icons {
+  margin-left: 20px;
+  font-size: 20px !important;
+  vertical-align: bottom;
+  color: #011638;
+}
+
+.material-icons:hover {
+  color: #D11C04;
+  cursor: pointer;
+}
+
+.material-icons:active {
+  color: #4C5760;
+}
+
 #todoButton {
   color: #D11C0A;
   border: none;
