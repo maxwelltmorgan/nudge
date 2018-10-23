@@ -50,11 +50,11 @@ const updateTodo = (index, todoProp, todoVal) => {
     todos[index][todoProp] = todoVal;
 };
 
-createProject('one');
+createProject('One');
 createProject('two');
 createProject('three');
 createTodo('onetodo', 'testing one', 'tomorrow', 'high');
 createTodo('twotodo', 'testing two', 'two weeks', 'low');
 createTodo('threetodo', 'testing three', 'yesterday', 'med');
 
-export { todos, project, projects, currentProject, setCurrentProject, createProject }
+export { todos, project, projects, currentProject, setCurrentProject, createProject, deleteProject, createTodo, deleteTodo }
