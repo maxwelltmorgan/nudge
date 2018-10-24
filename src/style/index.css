@@ -149,6 +149,11 @@ main {
   text-transform: capitalize;
 }
 
+.todos-item {
+    border-bottom: 1px solid #4c5760;
+    margin-right: 20px;
+}
+
 .material-icons {
   margin-left: 20px;
   font-size: 20px !important;
@@ -163,6 +168,10 @@ main {
 
 .material-icons:active {
   color: #4C5760;
+}
+
+.todo-remove-button {
+
 }
 
 #todoButton {
