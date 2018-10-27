@@ -7,11 +7,11 @@ body {
 }
 
 .left {
-    width: 34%;
+    width: 30%;
 }
 
 .right {
-    width: 66%;
+    width: 70%;
 }
 
 @media screen and (max-width: 600px) {
@@ -101,7 +101,6 @@ aside {
 .project-item {
   font-size: 1.2rem;
   padding: 5px;
-  text-transform: capitalize;
 }
 
 #projectButton {

@@ -1,7 +1,5 @@
 const projects = [];
 
-let currentProject = 'All Todos';
-
 //define project
 const project = (name) => {
     return { name };
@@ -35,6 +33,11 @@ const createTodo = (title, description, dueDate, priority) => {
     const newTodo = todo(title, description, dueDate, priority);
     todos.push(newTodo);
 };
+createTodo('Silly','fill','c','d');
+createTodo('Rabbit','your little','c','d');
+createTodo('Tricks','children full of','c','d');
+createTodo('Are For','healthy loads of','c','d');
+createTodo('Kids','sugar','c','d');
 
 //deleteTodo
 const deleteTodo = (i) => {
@@ -46,6 +49,4 @@ const updateTodo = (index, todoProp, todoVal) => {
     todos[index][todoProp] = todoVal;
 };
 
-createProject('All Todos');
-
-export { todos, project, projects, currentProject, setCurrentProject, createProject, deleteProject, createTodo, deleteTodo }
+export { todo, todos, project, projects, createProject, deleteProject, createTodo, deleteTodo }
