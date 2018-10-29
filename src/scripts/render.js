@@ -1,4 +1,4 @@
-import { todo, todos, project, projects, createProject, deleteProject, createTodo, deleteTodo } from './crud';
+import { todo, todos, project, projects, activeProject, updateActiveProject, createProject, deleteProject, createTodo, deleteTodo } from './crud';
 
 const projectsList = document.getElementById('projects-list');
 const projectButton = document.getElementById('projectButton');
@@ -14,6 +14,8 @@ currentProject.innerHTML = defaultProject.id;
 defaultProject.classList.add("project-item");
 defaultProject.addEventListener('click', function() {
     currentProject.innerHTML = defaultProject.id;
+    updateActiveProject(defaultProject.id);
+    listTodos();
 });
 projectsList.appendChild(defaultProject);
 
@@ -30,22 +32,21 @@ projectButton.addEventListener('click', function() {
     let removeButton = document.createElement("a")
     removeButton.classList.add("remove")
     removeButton.innerHTML = '<i class="material-icons">delete_outline</i>'
-
     projectItem.append(removeButton);
 
     projectItem.addEventListener('click', function() {
-        currentProject.innerHTML = projectItem.id;
+        currentProject.textContent = projectItem.id;
+        updateActiveProject(projectItem.id);
+        listTodos();
     });
-
     removeButton.addEventListener('click', function() {
         const projectIndex = projects.findIndex(project => project.name === projectItem.id);
         deleteProject(projectIndex);
         projectsList.removeChild(projectItem);
+        updateActiveProject(projectItem.id);
         projectItem.id = 'All Todos';
     });
-
     projectsList.appendChild(projectItem);
-
 });
 
 //add todo button
@@ -56,59 +57,62 @@ todoButton.addEventListener('click', function() {
     const newTodoDueDate = prompt("Enter Due Date");
     const newTodoPriority = prompt("Enter Priority");
     createTodo(newTodoTitle, newTodoDescription, newTodoDueDate, newTodoPriority);
-
-    const todosItem = document.createElement('li');
-    todosItem.classList.add('todos-item');
-    const todosTitle = document.createElement('h3');
-    todosTitle.textContent = newTodoTitle;
-    const todosParagraph = document.createElement('p');
-    todosParagraph.textContent = newTodoDescription;
-    todosItem.appendChild(todosTitle);
-    todosItem.appendChild(todosParagraph);
-    todosItem.id = newTodoTitle;
-
-    let removeButton = document.createElement("a");
-    removeButton.classList.add("remove");
-    removeButton.innerHTML = '<i class="material-icons todo-remove-button">delete_outline</i>';
-
-    todosTitle.append(removeButton);
-
-    removeButton.addEventListener('click', function() {
-        const todoIndex = todos.findIndex(todo => todo.name === todosItem.id);
-        deleteTodo(todoIndex);
-        todosList.removeChild(todosItem);
-    });
-
-    todosList.appendChild(todosItem);
-
+    listTodos();
 });
 
 const listTodos = () => {
 
+    while(todosList.firstChild) todosList.removeChild(todosList.firstChild);
+
     todos.forEach(function(todo){
-        const todosItem = document.createElement('li');
-        todosItem.classList.add('todos-item');
-        const todosTitle = document.createElement('h3');
-        todosTitle.textContent = todo.title;
-        const todosParagraph = document.createElement('p');
-        todosParagraph.textContent = todo.description;
-        todosItem.appendChild(todosTitle);
-        todosItem.appendChild(todosParagraph);
-        todosItem.id = todo.title;
+        if(activeProject == 'All Todos'){
+            const todosItem = document.createElement('li');
+            todosItem.classList.add('todos-item');
+            const todosTitle = document.createElement('h3');
+            todosTitle.textContent = todo.title;
+            const todosParagraph = document.createElement('p');
+            todosParagraph.textContent = todo.description;
+            todosItem.appendChild(todosTitle);
+            todosItem.appendChild(todosParagraph);
+            todosItem.id = todo.title;
 
-        let removeButton = document.createElement("a");
-        removeButton.classList.add("remove");
-        removeButton.innerHTML = '<i class="material-icons todo-remove-button">delete_outline</i>';
+            let removeButton = document.createElement("a");
+            removeButton.classList.add("remove");
+            removeButton.innerHTML = '<i class="material-icons todo-remove-button">delete_outline</i>';
 
-        todosTitle.append(removeButton);
+            todosTitle.append(removeButton);
 
-        removeButton.addEventListener('click', function() {
-            const todoIndex = todos.findIndex(todo => todo.name === todosItem.id);
-            deleteTodo(todoIndex);
-            todosList.removeChild(todosItem);
-        });
+            removeButton.addEventListener('click', function() {
+                const todoIndex = todos.findIndex(todo => todo.name === todosItem.id);
+                deleteTodo(todoIndex);
+                todosList.removeChild(todosItem);
+            });
+            todosList.appendChild(todosItem);
+        }
+        else if(todo.todoProj == activeProject){
+            const todosItem = document.createElement('li');
+            todosItem.classList.add('todos-item');
+            const todosTitle = document.createElement('h3');
+            todosTitle.textContent = todo.title;
+            const todosParagraph = document.createElement('p');
+            todosParagraph.textContent = todo.description;
+            todosItem.appendChild(todosTitle);
+            todosItem.appendChild(todosParagraph);
+            todosItem.id = todo.title;
 
-        todosList.appendChild(todosItem);
+            let removeButton = document.createElement("a");
+            removeButton.classList.add("remove");
+            removeButton.innerHTML = '<i class="material-icons todo-remove-button">delete_outline</i>';
+
+            todosTitle.append(removeButton);
+
+            removeButton.addEventListener('click', function() {
+                const todoIndex = todos.findIndex(todo => todo.name === todosItem.id);
+                deleteTodo(todoIndex);
+                todosList.removeChild(todosItem);
+            });
+            todosList.appendChild(todosItem);
+        };
     });
 };
 listTodos();
