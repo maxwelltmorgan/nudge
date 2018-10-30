@@ -43,19 +43,14 @@ const deleteTodo = (i) => {
     todos.splice(i, 1);
 };
 
-//updateTodo
-const updateTodo = (index, todoProp, todoVal) => {
-    todos[index][todoProp] = todoVal;
-};
-
 const updateActiveProject = (input) => {
     activeProject = input;
 };
 
-createTodo('Silly','fill','c','d');
-createTodo('Rabbit','your little','c','d');
-createTodo('Tricks','children full of','c','d');
-createTodo('Are For','healthy loads of','c','d');
-createTodo('Kids','sugar','c','d');
+createTodo('Pay Bills','send check to water company','c','d');
+createTodo('Exercise','30 min jog @ park','c','d');
+createTodo('Groceries','pick up bread and milk','c','d');
+createTodo('Lunch Meeting','discuss future of ABC123 Inc','c','d');
+createTodo('Car Appointment','take vehicle in for maintenance','c','d');
 
 export { todo, todos, project, projects, activeProject, updateActiveProject, createProject, deleteProject, createTodo, deleteTodo }

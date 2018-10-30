@@ -21,19 +21,19 @@ projectsList.appendChild(defaultProject);
 
 //add project button
 projectButton.addEventListener('click', function() {
+    //create new project
     const newProjectName = prompt("Enter project name");
     createProject(newProjectName);
-
     const projectItem = document.createElement('li');
     projectItem.textContent = newProjectName;
     projectItem.id = newProjectName;
     projectItem.classList.add("project-item");
-
+    //add remove buttons
     let removeButton = document.createElement("a")
     removeButton.classList.add("remove")
     removeButton.innerHTML = '<i class="material-icons">delete_outline</i>'
     projectItem.append(removeButton);
-
+    //add event listeners for selecting project and removing project
     projectItem.addEventListener('click', function() {
         currentProject.textContent = projectItem.id;
         updateActiveProject(projectItem.id);
@@ -52,6 +52,7 @@ projectButton.addEventListener('click', function() {
 //add todo button
 const todoButton = document.getElementById('todoButton');
 todoButton.addEventListener('click', function() {
+    //create new to-dos
     const newTodoTitle = prompt("Enter todo");
     const newTodoDescription = prompt("Enter description");
     const newTodoDueDate = prompt("Enter Due Date");
@@ -61,9 +62,9 @@ todoButton.addEventListener('click', function() {
 });
 
 const listTodos = () => {
-
+    //clear prior to-do list
     while(todosList.firstChild) todosList.removeChild(todosList.firstChild);
-
+    //create new list associated to selected project
     todos.forEach(function(todo){
         if(activeProject == 'All Todos'){
             const todosItem = document.createElement('li');
@@ -75,13 +76,12 @@ const listTodos = () => {
             todosItem.appendChild(todosTitle);
             todosItem.appendChild(todosParagraph);
             todosItem.id = todo.title;
-
+            //add delete buttons
             let removeButton = document.createElement("a");
             removeButton.classList.add("remove");
             removeButton.innerHTML = '<i class="material-icons todo-remove-button">delete_outline</i>';
-
             todosTitle.append(removeButton);
-
+            //add event listeners for selecting and removing to-do's
             removeButton.addEventListener('click', function() {
                 const todoIndex = todos.findIndex(todo => todo.name === todosItem.id);
                 deleteTodo(todoIndex);
