@@ -47,10 +47,10 @@ const updateActiveProject = (input) => {
     activeProject = input;
 };
 
-createTodo('Pay Bills','send check to water company','c','d');
-createTodo('Exercise','30 min jog @ park','c','d');
-createTodo('Groceries','pick up bread and milk','c','d');
-createTodo('Lunch Meeting','discuss future of ABC123 Inc','c','d');
-createTodo('Car Appointment','take vehicle in for maintenance','c','d');
+createTodo('Pay Bills','send check to water company','11-20-2018','d');
+createTodo('Exercise','30 min jog @ park','11-22-2018','d');
+createTodo('Groceries','pick up bread and milk','11-23-2018','d');
+createTodo('Lunch Meeting','discuss future of ABC123 Inc','11-23-2018','d');
+createTodo('Car Appointment','take vehicle in for maintenance','11-26-2018','d');
 
 export { todo, todos, project, projects, activeProject, updateActiveProject, createProject, deleteProject, createTodo, deleteTodo }

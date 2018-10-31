@@ -73,8 +73,14 @@ const listTodos = () => {
             todosTitle.textContent = todo.title;
             const todosParagraph = document.createElement('p');
             todosParagraph.textContent = todo.description;
+            const todosDueDate = document.createElement('p');
+            todosDueDate.textContent = 'Due: ' + todo.dueDate;
+            todosDueDate.classList.add('todos-duedate');
+
+            todosItem.appendChild(todosDueDate);
             todosItem.appendChild(todosTitle);
             todosItem.appendChild(todosParagraph);
+
             todosItem.id = todo.title;
             //add delete buttons
             let removeButton = document.createElement("a");

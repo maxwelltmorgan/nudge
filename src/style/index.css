@@ -194,3 +194,12 @@ main {
 #todoButton:focus {
   outline: none;
 }
+
+.todos-duedate {
+  position: absolute;
+  right: 40px;
+  margin-top: 2px;
+  color: #4c5760;
+  font-style: italic;
+  font-size: .8rem;
+}
