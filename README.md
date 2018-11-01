@@ -2,7 +2,7 @@
 
 ##Project completed as part of Odin Project Curriculum
 
-![to-do list][nudge.png]
+![to-do list]['nudge.png']
 
 1.  Use factories or constructors to dynamically create to-do's.
 2.  Associate to-do's to separate projects.
