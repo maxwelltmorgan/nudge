@@ -1,6 +1,6 @@
 # Nudge
 
-## Project completed as part of Odin Project Curriculum
+### Project completed as part of Odin Project Curriculum
 
 ![to-do list](nudge.png)
 
